@@ -1,0 +1,13 @@
+doctrine:
+  orm:
+    mappings:
+      KnapsackProblem:
+          is_bundle: false
+          dir: '%kernel.project_dir%/src/KnapsackProblem/Entity'
+          prefix: 'App\KnapsackProblem\Entity'
+          alias: KnapsackProblem
+
+services:
+    _defaults:
+        autowire: true     
+        autoconfigure: true

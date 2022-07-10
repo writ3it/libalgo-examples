@@ -41,14 +41,14 @@ class ScheduleTasksCommand extends Command
     public function execute(InputInterface $input, OutputInterface $output):int
     {
         /**
-         * @var ArrayCollection<Task> $tasks
-         * @var ArrayCollection<WorkingMonth> $months
+         * @var ArrayCollection<mixed,Task> $tasks
+         * @var ArrayCollection<mixed,WorkingMonth> $months
          */
         $tasks =  new ArrayCollection($this->taskRepository->findAllNotScheduled());
         $months = new ArrayCollection($this->workingMonthRepository->findAllNotScheduled());
 
         $this->tasksSchedulerService->scheduleTasks($tasks, $months);
-        
+
         if ($input->getOption('persist')) {
             $this->workingMonthRepository->flush();
         }

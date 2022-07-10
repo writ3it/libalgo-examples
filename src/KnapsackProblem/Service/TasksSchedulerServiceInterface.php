@@ -11,8 +11,8 @@ interface TasksSchedulerServiceInterface
 {
     /**
      * Returns task in any order that can be scheduled. 
-     * @param Collection<Task> $tasks
-     * @param Collection<WorkingMonth> $months
+     * @param Collection<mixed,Task> $tasks
+     * @param Collection<mixed,WorkingMonth> $months
      */
     public function scheduleTasks(Collection $tasks, Collection $months):void;
 }

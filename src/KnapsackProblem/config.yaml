@@ -2,6 +2,7 @@ doctrine:
   orm:
     mappings:
       KnapsackProblem:
+          type: attribute
           is_bundle: false
           dir: '%kernel.project_dir%/src/KnapsackProblem/Entity'
           prefix: 'App\KnapsackProblem\Entity'
@@ -11,3 +12,17 @@ services:
     _defaults:
         autowire: true     
         autoconfigure: true
+
+    App\KnapsackProblem\Repository\:
+      resource: "./Repository/**"
+
+    App\KnapsackProblem\Service\TaskRepositoryInterface: '@App\KnapsackProblem\Repository\TaskRepository'
+    App\KnapsackProblem\Service\WorkingMonthRepositoryInterface: '@App\KnapsackProblem\Repository\WorkingMonthRepository'
+
+    App\KnapsackProblem\Service\TasksSchedulerServiceInterface:
+      class: App\KnapsackProblem\Service\TasksSchedulerService
+      public: true
+
+    App\KnapsackProblem\Console\:
+      resource: "./Console/**"
+      public: true

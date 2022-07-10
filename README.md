@@ -6,7 +6,14 @@
 2. Do `$ composer install-and-prepare`.
 3. Browse examples for the next instructions.
 
+### Usefull commands
+
+To recreate database, call command below:
+```shell
+$ composer reset-db
+```
+
 ## Examples
 
-- [KnapsackProblem](./src//KnapsackProblem/README.md)
+- [How to schedule tasks in months to get a profit as quickly as possible with limited work time? (KnapsackProblem)](./src//KnapsackProblem/README.md)
 

@@ -64,8 +64,15 @@
         ],
         "install-and-prepare": [
             "@composer install",
+            "@prepare"
+        ],
+        "prepare": [
             "php bin/console --no-interaction doctrine:database:create",
             "php bin/console --no-interaction doctrine:migrations:migrate"
+        ],
+        "reset-db": [
+            "rm var/app.db",
+            "@prepare"
         ]
     },
     "conflict": {
